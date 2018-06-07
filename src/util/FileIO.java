@@ -20,16 +20,21 @@ public class FileIO {
             boolean eof = false;
             while (!eof) {
                 String line = buff.readLine(); //In a loop read a line using readLine method.
-
                 if (line == null) {
                     eof = true;
                 } else if ((skipLinesAtStart > 0)) {
+                    //Skip the title line
                     skipLinesAtStart--;
                 } else {
+                    //create new student for each line
                     studentArr[i] = new Student();
+                    //tokenize the line
                     StringTokenizer st = new StringTokenizer(line);
                     while (st.hasMoreTokens()) {
+                        //first token is student id
                         studentArr[i].setSID(Integer.parseInt(st.nextToken()));
+
+                        //the rest of the tokens is quia scores
                         int[] data = new int[columns];
                         for (int j = 0; j < columns; j++) {
                             data[j] = Integer.parseInt(st.nextToken());
@@ -42,6 +47,7 @@ public class FileIO {
             }
             buff.close();
         } catch (IOException e) {
+            //print exception to console
             System.out.println(e.toString());
         }
         return studentArr;

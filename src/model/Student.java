@@ -26,8 +26,8 @@ public class Student {
     }
 
     //Print SID
-    public void printSID(){
-        System.out.print("Student ID: "+getSID()+"\n");
+    public void printSID() {
+        System.out.print("Student ID: " + getSID() + "\n");
 
     }
 
@@ -35,8 +35,8 @@ public class Student {
     //Print Student's Scores
     public void printScore() {
         System.out.print("Student Scores:\n");
-        for(int i =0;i<getScores().length;i++){
-            System.out.print("Quiz "+(i+1)+": " + getScores()[i]+"\n");
+        for (int i = 0; i < getScores().length; i++) {
+            System.out.print("Quiz " + (i + 1) + ": " + getScores()[i] + "\n");
         }
 
     }
